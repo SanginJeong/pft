@@ -183,10 +183,7 @@ export default function Studies() {
       </AnimatePresence>
 
       <footer className="absolute bottom-6 text-sm text-neutral-600">
-        © {new Date().getFullYear()} {profile.name} ·{" "}
-        <a href={`mailto:${profile.email}`} className="hover:text-neutral-400">
-          {profile.email}
-        </a>
+        © {new Date().getFullYear()} {profile.name} · {profile.email}
       </footer>
     </section>
   );
