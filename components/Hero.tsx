@@ -56,12 +56,9 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${profile.email}`}
-              className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
-            >
+            <span className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white">
               {profile.email}
-            </a>
+            </span>
             <a
               href={profile.github}
               target="_blank"
