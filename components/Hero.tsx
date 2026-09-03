@@ -41,23 +41,20 @@ export default function Hero() {
           </motion.p>
           <motion.h1
             variants={item}
-            className="text-5xl font-bold tracking-tight sm:text-6xl"
+            className="mb-4 text-lg font-medium text-neutral-500"
           >
-            <span className="">{profile.name}</span>
+            <span className="mr-4 text-5xl font-bold tracking-tight sm:text-6xl text-black">
+              {profile.name}
+            </span>
             입니다
           </motion.h1>
           <motion.p
             variants={item}
-            className="mt-6 text-xl font-semibold text-neutral-800 sm:text-2xl"
+            className="mb-4 text-lg font-medium text-neutral-500"
           >
-            {profile.tagline}
+            잘부탁드립니다
           </motion.p>
-          <motion.p
-            variants={item}
-            className="mt-3 text-base text-neutral-500 sm:text-lg"
-          >
-            {profile.intro}
-          </motion.p>
+
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">
             <a
               href={`mailto:${profile.email}`}

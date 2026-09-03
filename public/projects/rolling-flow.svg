@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" font-family="'Pretendard', -apple-system, sans-serif">
+  <rect width="900" height="440" rx="20" fill="#f5f5f7"/>
+  <text x="40" y="34" font-size="15" font-weight="700" fill="#1d1d1f">사용자 흐름 (User Flow)</text>
+
+  <!-- defs -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#86868b"/>
+    </marker>
+  </defs>
+
+  <!-- Row 1 -->
+  <!-- Card 1: 랜딩 -->
+  <g>
+    <rect x="40" y="56" width="240" height="120" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+    <circle cx="68" cy="88" r="14" fill="#0071e3"/>
+    <text x="68" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">1</text>
+    <text x="94" y="93" font-size="17" font-weight="700" fill="#1d1d1f">랜딩</text>
+    <text x="64" y="128" font-size="13" fill="#6e6e73">서비스 소개 ·</text>
+    <text x="64" y="148" font-size="13" fill="#6e6e73">"롤링페이퍼 만들기" 진입</text>
+  </g>
+
+  <!-- Card 2: 목록 -->
+  <g>
+    <rect x="330" y="56" width="240" height="120" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+    <circle cx="358" cy="88" r="14" fill="#0071e3"/>
+    <text x="358" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">2</text>
+    <text x="384" y="93" font-size="17" font-weight="700" fill="#1d1d1f">목록</text>
+    <text x="354" y="128" font-size="13" fill="#6e6e73">인기 · 최신 롤링페이퍼</text>
+    <text x="354" y="148" font-size="13" fill="#6e6e73">가로 스크롤 탐색</text>
+  </g>
+
+  <!-- Card 3: 생성 -->
+  <g>
+    <rect x="620" y="56" width="240" height="120" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+    <circle cx="648" cy="88" r="14" fill="#0071e3"/>
+    <text x="648" y="93" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">3</text>
+    <text x="674" y="93" font-size="17" font-weight="700" fill="#1d1d1f">생성</text>
+    <text x="644" y="128" font-size="13" fill="#6e6e73">받는 대상 입력 ·</text>
+    <text x="644" y="148" font-size="13" fill="#6e6e73">배경 컬러/이미지 선택</text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- Card 4: 메시지 작성 -->
+  <g>
+    <rect x="620" y="264" width="240" height="120" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+    <circle cx="648" cy="296" r="14" fill="#0071e3"/>
+    <text x="648" y="301" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">4</text>
+    <text x="674" y="301" font-size="17" font-weight="700" fill="#1d1d1f">메시지 작성</text>
+    <text x="644" y="336" font-size="13" fill="#6e6e73">보낸이 · 관계 · 프로필 ·</text>
+    <text x="644" y="356" font-size="13" fill="#6e6e73">에디터(폰트) 입력</text>
+  </g>
+
+  <!-- Card 5: 상세 -->
+  <g>
+    <rect x="330" y="264" width="240" height="120" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+    <circle cx="358" cy="296" r="14" fill="#0071e3"/>
+    <text x="358" y="301" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">5</text>
+    <text x="384" y="301" font-size="17" font-weight="700" fill="#1d1d1f">상세 열람</text>
+    <text x="354" y="336" font-size="13" fill="#6e6e73">메시지 카드 그리드 ·</text>
+    <text x="354" y="356" font-size="13" fill="#6e6e73">무한 스크롤</text>
+  </g>
+
+  <!-- Card 6: 반응 & 공유 -->
+  <g>
+    <rect x="40" y="264" width="240" height="120" rx="16" fill="#1d1d1f"/>
+    <circle cx="68" cy="296" r="14" fill="#0071e3"/>
+    <text x="68" y="301" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">6</text>
+    <text x="94" y="301" font-size="17" font-weight="700" fill="#ffffff">반응 &amp; 공유</text>
+    <text x="64" y="336" font-size="13" fill="#c7c7cc">이모지 반응 ·</text>
+    <text x="64" y="356" font-size="13" fill="#c7c7cc">카카오톡 / URL 공유</text>
+  </g>
+
+  <!-- Arrows -->
+  <line x1="284" y1="116" x2="326" y2="116" stroke="#86868b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="574" y1="116" x2="616" y2="116" stroke="#86868b" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- down from card3 to card4 -->
+  <path d="M740 180 L740 260" fill="none" stroke="#86868b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="616" y1="324" x2="574" y2="324" stroke="#86868b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="326" y1="324" x2="284" y2="324" stroke="#86868b" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { profile, studies, type Study } from "@/data/content";
 
 const container = {
@@ -18,6 +20,38 @@ const item = {
     transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] as const },
   },
 };
+
+// 템플릿 문자열의 코드 들여쓰기를 제거합니다.
+// (마크다운은 4칸 이상 들여쓴 줄을 코드 블록으로 해석하므로 반드시 필요)
+function dedent(text: string) {
+  const lines = text.replace(/\t/g, "  ").split("\n");
+  const indents = lines
+    .filter((line) => line.trim().length > 0)
+    .map((line) => line.match(/^ */)?.[0].length ?? 0);
+  const min = indents.length ? Math.min(...indents) : 0;
+  return lines
+    .map((line) => line.slice(min))
+    .join("\n")
+    .trim();
+}
+
+// detail 내용을 마크다운으로 렌더링합니다. (제목, 목록, 링크, 굵게, 코드, 표 등 지원)
+function StudyMarkdown({ children }: { children: string }) {
+  return (
+    <div className="mt-2 space-y-3 leading-relaxed text-neutral-700 [&_a]:font-medium [&_a]:text-[#2997ff] [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-[#5cb0ff] [&_code]:rounded [&_code]:bg-neutral-100 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.85em] [&_h1]:mt-4 [&_h1]:text-lg [&_h1]:font-bold [&_h2]:mt-4 [&_h2]:text-base [&_h2]:font-bold [&_h3]:mt-3 [&_h3]:font-semibold [&_li]:ml-1 [&_ol]:list-decimal [&_ol]:space-y-1 [&_ol]:pl-5 [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          a: ({ ...props }) => (
+            <a target="_blank" rel="noreferrer" {...props} />
+          ),
+        }}
+      >
+        {dedent(children)}
+      </ReactMarkdown>
+    </div>
+  );
+}
 
 function StudyModal({ study, onClose }: { study: Study; onClose: () => void }) {
   useEffect(() => {
@@ -76,23 +110,9 @@ function StudyModal({ study, onClose }: { study: Study; onClose: () => void }) {
 
           {study.detail && (
             <div className="mt-8 border-t border-neutral-100 pt-8">
-              <h4 className="text-sm font-semibold uppercase tracking-widest text-neutral-400">
-                소개
-              </h4>
-              <p className="mt-2 leading-relaxed text-neutral-700">
-                {study.detail}
-              </p>
+              <StudyMarkdown>{study.detail}</StudyMarkdown>
             </div>
           )}
-
-          <a
-            href={study.href}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-block rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
-          >
-            보러 가기 ↗
-          </a>
         </div>
       </motion.div>
     </motion.div>
@@ -118,14 +138,8 @@ export default function Studies() {
           variants={item}
           className="text-center text-4xl font-bold tracking-tight sm:text-5xl"
         >
-          스터디.
+          스터디
         </motion.h2>
-        <motion.p
-          variants={item}
-          className="mt-3 text-center text-lg text-neutral-400"
-        >
-          카드를 클릭하면 자세히 볼 수 있어요.
-        </motion.p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {studies.map((study) => (

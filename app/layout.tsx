@@ -4,7 +4,7 @@ import { profile } from "@/data/content";
 
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.role}`,
-  description: profile.tagline,
+  description: profile.intro,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

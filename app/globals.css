@@ -30,22 +30,12 @@ body {
   color: #fff;
 }
 
-.snap-container {
-  height: 100dvh;
-  overflow-y: auto;
+html {
   scroll-behavior: smooth;
-}
-
-/* 모바일에서는 섹션이 화면보다 길어질 수 있어 스냅을 끈다 */
-@media (min-width: 768px) {
-  .snap-container {
-    scroll-snap-type: y mandatory;
-  }
 }
 
 .snap-section {
   min-height: 100dvh;
-  scroll-snap-align: start;
 }
 
 .text-gradient-hello {

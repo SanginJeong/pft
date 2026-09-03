@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="720" viewBox="0 0 920 720" font-family="'SF Mono','Menlo','Consolas',monospace">
+  <rect width="920" height="720" rx="20" fill="#f5f5f7"/>
+
+  <defs>
+    <marker id="rarrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#0071e3"/>
+    </marker>
+  </defs>
+
+  <!-- ===== BEFORE block ===== -->
+  <rect x="24" y="16" width="872" height="462" rx="14" fill="#1d1d1f"/>
+  <text x="44" y="38" font-family="'Pretendard',sans-serif" font-size="12" fill="#8b949e">Header.jsx</text>
+  <rect x="32" y="107" width="856" height="300" rx="6" fill="#f851491a" stroke="#f8514933"/>
+
+  <g font-size="10.5" fill="#8b949e">
+    <text x="40" y="58">&lt;<tspan fill="#6cb6ff">HeaderBase</tspan>&gt;</text>
+    <text x="54" y="73">&lt;nav className="flex flex-col items-start md:flex-row md:justify-between items-center my-container"&gt;</text>
+    <text x="68" y="88">&lt;<tspan fill="#6cb6ff">ProfileGroup</tspan> profileCount={messages.count} profileImages={profileImages} /&gt;</text>
+    <text x="68" y="103">&lt;<tspan fill="#6cb6ff">CardCountInfo</tspan> cardCount={messages.count} /&gt;</text>
+    <text x="68" y="118">&lt;<tspan fill="#6cb6ff">Dropdown</tspan>&gt;</text>
+    <text x="82" y="133">&lt;<tspan fill="#6cb6ff">DropdownTrigger</tspan> showArrow&gt;</text>
+    <text x="96" y="148">&lt;div className="flex gap-[8px]"&gt;</text>
+    <text x="110" y="163">{topReactions?.map(reaction =&gt; (</text>
+    <text x="124" y="178">&lt;<tspan fill="#6cb6ff">EmojiBadge</tspan> reaction={reaction} key={reaction.id} /&gt;</text>
+    <text x="110" y="193">))}</text>
+    <text x="96" y="208">&lt;/div&gt;</text>
+    <text x="82" y="223">&lt;/<tspan fill="#6cb6ff">DropdownTrigger</tspan>&gt;</text>
+    <text x="82" y="238">&lt;div className="w-[203px] md:w-[312px] absolute md:left-[-100px]"&gt;</text>
+    <text x="96" y="253">&lt;<tspan fill="#6cb6ff">DropdownContent</tspan>&gt;</text>
+    <text x="110" y="268">&lt;div className="p-[12px] md:p-[24px] grid grid-cols-4 gap-[10px]"&gt;</text>
+    <text x="124" y="283">{reactions?.results?.map(reaction =&gt; (</text>
+    <text x="138" y="298">&lt;div className="w-1/4"&gt;</text>
+    <text x="152" y="313">&lt;<tspan fill="#6cb6ff">EmojiBadge</tspan> reaction={reaction} /&gt;</text>
+    <text x="138" y="328">&lt;/div&gt;</text>
+    <text x="124" y="343">))}</text>
+    <text x="110" y="358">&lt;/div&gt;</text>
+    <text x="96" y="373">&lt;/<tspan fill="#6cb6ff">DropdownContent</tspan>&gt;</text>
+    <text x="82" y="388">&lt;/div&gt;</text>
+    <text x="68" y="403">&lt;/<tspan fill="#6cb6ff">Dropdown</tspan>&gt;</text>
+    <text x="68" y="418">&lt;<tspan fill="#6cb6ff">Picker</tspan> setReactions={setReactions} setTopReactions={setTopReactions} /&gt;</text>
+    <text x="68" y="433">&lt;<tspan fill="#6cb6ff">Share</tspan> name={recipient.name} messages={messages.results} recipientId={recipientId} /&gt;</text>
+    <text x="54" y="448">&lt;/nav&gt;</text>
+    <text x="40" y="463">&lt;/<tspan fill="#6cb6ff">HeaderBase</tspan>&gt;</text>
+  </g>
+
+  <!-- arrow -->
+  <line x1="460" y1="486" x2="460" y2="514" stroke="#0071e3" stroke-width="2.5" marker-end="url(#rarrow)"/>
+
+  <!-- ===== AFTER block ===== -->
+  <rect x="24" y="524" width="872" height="180" rx="14" fill="#1d1d1f"/>
+  <text x="44" y="546" font-family="'Pretendard',sans-serif" font-size="12" fill="#8b949e">Header.jsx</text>
+  <rect x="32" y="615" width="856" height="17" rx="5" fill="#2ea0431a" stroke="#2ea04333"/>
+
+  <g font-size="10.5" fill="#8b949e">
+    <text x="40" y="566">&lt;<tspan fill="#6cb6ff">HeaderBase</tspan>&gt;</text>
+    <text x="54" y="581">&lt;nav className="flex flex-col items-start md:flex-row md:justify-between items-center my-container"&gt;</text>
+    <text x="68" y="596">&lt;<tspan fill="#6cb6ff">ProfileGroup</tspan> profileCount={messages.count} profileImages={profileImages} /&gt;</text>
+    <text x="68" y="611">&lt;<tspan fill="#6cb6ff">CardCountInfo</tspan> cardCount={messages.count} /&gt;</text>
+    <text x="68" y="626">&lt;<tspan fill="#7ee787" font-weight="700">HeaderDropdown</tspan> /&gt;</text>
+    <text x="68" y="641">&lt;<tspan fill="#6cb6ff">Picker</tspan> setReactions={setReactions} setTopReactions={setTopReactions} /&gt;</text>
+    <text x="68" y="656">&lt;<tspan fill="#6cb6ff">Share</tspan> name={recipient.name} messages={messages.results} recipientId={recipientId} /&gt;</text>
+    <text x="54" y="671">&lt;/nav&gt;</text>
+    <text x="40" y="686">&lt;/<tspan fill="#6cb6ff">HeaderBase</tspan>&gt;</text>
+  </g>
+</svg>
