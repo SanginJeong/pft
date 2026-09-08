@@ -2,7 +2,7 @@
 
 export const profile = {
   name: "정상인", // TODO: 실명 확인 후 수정
-  role: "Frontend Developer",
+  role: "포트폴리오",
   intro:
     "React와 Next.js로 서비스를 만들며, 디테일한 인터랙션과 읽기 좋은 코드를 좋아합니다.", // TODO: 자기소개 한 줄
   email: "sanginjeong07@gmail.com",

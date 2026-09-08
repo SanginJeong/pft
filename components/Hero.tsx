@@ -52,7 +52,7 @@ export default function Hero() {
             variants={item}
             className="mb-4 text-lg font-medium text-neutral-500"
           >
-            잘부탁드립니다
+            서비스의 성능을 수치로 개선하고, 사용자의 불편을 고민합니다
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">
