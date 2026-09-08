@@ -185,7 +185,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Afterglow (출시 대기)",
+    title: "Afterglow (26.9.21 출시 예정)",
     summary:
       "한국관광공사 공모전: 외국인 대상 피부 시술 이후 관광 코스 추천 서비스",
     period: "2026.05 ~ (진행 중)",
