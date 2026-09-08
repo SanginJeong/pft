@@ -6,11 +6,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { profile, studies, type Study } from "@/data/content";
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.16, delayChildren: 0.1 } },
-};
-
 const item = {
   hidden: { opacity: 0, y: 48, filter: "blur(6px)" },
   show: {
@@ -127,15 +122,12 @@ export default function Studies() {
       id="studies"
       className="snap-section relative flex flex-col items-center justify-center bg-black px-6 py-24 text-white"
     >
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className="w-full max-w-5xl"
-      >
+      <div className="w-full max-w-5xl">
         <motion.h2
           variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.5 }}
           className="text-center text-4xl font-bold tracking-tight sm:text-5xl"
         >
           스터디
@@ -146,6 +138,9 @@ export default function Studies() {
             <motion.button
               key={study.title}
               variants={item}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -10% 0px" }}
               onClick={() => setSelected(study)}
               className="group flex flex-col rounded-3xl bg-[#1d1d1f] p-8 text-left transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#2a2a2d]"
             >
@@ -174,7 +169,7 @@ export default function Studies() {
             </motion.button>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         {selected && (
