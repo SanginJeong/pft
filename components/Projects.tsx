@@ -18,6 +18,36 @@ function renderRichText(text: string) {
   );
 }
 
+// 본문 중간의 `![설명](/경로.png)` 줄을 이미지로 렌더링하고, 나머지는 문단으로 표시
+function renderBody(text: string, className: string) {
+  const parts = text.split(/\n*!\[([^\]]*)\]\(([^)]+)\)\n*/g);
+  const blocks = [];
+  for (let i = 0; i < parts.length; i += 3) {
+    if (parts[i]) {
+      blocks.push(
+        <p key={`p${i}`} className={className}>
+          {renderRichText(parts[i])}
+        </p>,
+      );
+    }
+    if (parts[i + 2]) {
+      blocks.push(
+        <Image
+          key={`img${i}`}
+          src={parts[i + 2]}
+          alt={parts[i + 1]}
+          width={0}
+          height={0}
+          sizes="(max-width: 768px) 100vw, 600px"
+          quality={90}
+          className="mt-4 h-auto w-full rounded-xl border border-neutral-100"
+        />,
+      );
+    }
+  }
+  return blocks;
+}
+
 const item = {
   hidden: { opacity: 0, y: 48, filter: "blur(6px)" },
   show: {
@@ -246,11 +276,11 @@ function ProjectModal({
                       className="mt-4 h-auto w-full rounded-xl border border-neutral-100"
                     />
                   )}
-                  {section.contentAfter && (
-                    <p className="mt-4 whitespace-pre-line leading-relaxed text-neutral-700">
-                      {renderRichText(section.contentAfter)}
-                    </p>
-                  )}
+                  {section.contentAfter &&
+                    renderBody(
+                      section.contentAfter,
+                      "mt-4 whitespace-pre-line leading-relaxed text-neutral-700",
+                    )}
                   {section.link && (
                     <a
                       href={section.link.href}
