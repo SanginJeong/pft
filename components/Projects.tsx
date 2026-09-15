@@ -240,7 +240,7 @@ function ProjectModal({
                     rel="noreferrer"
                     className="rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
                   >
-                    배포 보기 ↗
+                    {project.linkLabel ?? "배포 보기"} ↗
                   </a>
                 )}
                 {project.repo && (

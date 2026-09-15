@@ -46,6 +46,7 @@ export type Project = {
   period?: string; // 프로젝트 기간. 모달 상세에서 summary 아래에 표시됩니다 (예: "2025.08.09 ~ 08.26")
   tags: string[];
   link?: string;
+  linkLabel?: string; // 배포 링크 버튼 문구 (기본 "배포 보기"). 예: 앱은 "App Store"
   repo?: string;
   device?: "mobile" | "laptop"; // 목업 모양 선택 (기본 mobile). laptop 은 가로형 노트북 목업 — 가로 화면 캡처 권장
   image?: string; // 대표 스크린샷 — public/projects/ 에 넣고 "/projects/파일명.png" 형태로 지정 (mobile: 세로, laptop: 가로 캡처 권장)
@@ -60,7 +61,8 @@ export const projects: Project[] = [
     period: "2026.05 ~ (진행 중)",
     tags: ["React Native", "Expo", "TypeScript", "Turborepo", "디자인 시스템"],
     repo: "https://github.com/one-two-poof/afterglow-fe",
-    link: "https://apps.apple.com/us/app/afterglow-480b89/id6808603701",
+    link: "https://apps.apple.com/kr/app/afterglow/id6808603701",
+    linkLabel: "App Store",
     image: "/projects/afterglow.png",
     details: [
       {
