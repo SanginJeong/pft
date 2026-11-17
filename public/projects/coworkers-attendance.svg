@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="330" viewBox="0 0 920 330" font-family="'Pretendard', -apple-system, sans-serif">
+  <rect width="920" height="330" rx="20" fill="#f5f5f7"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#86868b"/>
+    </marker>
+  </defs>
+
+  <!-- 상단 라벨 -->
+  <g font-size="13" font-weight="600" fill="#86868b" text-anchor="middle" letter-spacing="0.5">
+    <text x="162" y="40">DB에 저장하는 것</text>
+    <text x="460" y="40">볼 때마다 계산</text>
+    <text x="758" y="40">판정 결과 (저장하지 않음)</text>
+  </g>
+
+  <!-- DB: 사실 + 규칙 -->
+  <rect x="32" y="56" width="260" height="172" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+  <rect x="52" y="76" width="220" height="62" rx="12" fill="#f5f5f7"/>
+  <text x="162" y="102" font-size="16" font-weight="700" fill="#1d1d1f" text-anchor="middle">사실</text>
+  <text x="162" y="124" font-size="13" fill="#6e6e73" text-anchor="middle">출퇴근 시각 · 휴가 결정</text>
+  <rect x="52" y="148" width="220" height="62" rx="12" fill="#f5f5f7"/>
+  <text x="162" y="174" font-size="16" font-weight="700" fill="#1d1d1f" text-anchor="middle">규칙 (근태 정책)</text>
+  <text x="162" y="196" font-size="13" fill="#6e6e73" text-anchor="middle">고정 · 코어타임 · 자율</text>
+
+  <!-- 정책 엔진 -->
+  <rect x="350" y="86" width="220" height="112" rx="16" fill="#1d1d1f"/>
+  <text x="460" y="134" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">정책 엔진</text>
+  <text x="460" y="160" font-size="13" fill="#a1a1a6" text-anchor="middle">순수 함수 · 날짜도 인자로</text>
+
+  <!-- 판정 결과 -->
+  <rect x="628" y="56" width="260" height="172" rx="16" fill="#ffffff" stroke="#e2e2e7"/>
+  <g font-size="16" font-weight="700" text-anchor="middle">
+    <rect x="648" y="80" width="104" height="58" rx="12" fill="#e8f5ec"/>
+    <text x="700" y="115" fill="#1b7f3b">정상</text>
+    <rect x="764" y="80" width="104" height="58" rx="12" fill="#fff4e5"/>
+    <text x="816" y="115" fill="#b45309">지각</text>
+    <rect x="648" y="150" width="104" height="58" rx="12" fill="#fdecec"/>
+    <text x="700" y="185" fill="#c62828">결근</text>
+    <rect x="764" y="150" width="104" height="58" rx="12" fill="#efeafd"/>
+    <text x="816" y="185" fill="#6b46c1">휴가</text>
+  </g>
+
+  <!-- 흐름 화살표 -->
+  <g stroke="#86868b" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <line x1="294" y1="142" x2="346" y2="142"/>
+    <line x1="572" y1="142" x2="624" y2="142"/>
+  </g>
+  <g font-size="12" fill="#86868b" text-anchor="middle">
+    <text x="320" y="130">조회</text>
+    <text x="598" y="130">날짜별</text>
+  </g>
+
+  <!-- 정책 변경 -->
+  <rect x="32" y="262" width="200" height="44" rx="22" fill="#ffffff" stroke="#0071e3" stroke-width="1.5"/>
+  <text x="132" y="290" font-size="14" font-weight="700" fill="#0071e3" text-anchor="middle">인사담당자: 정책 변경</text>
+  <line x1="132" y1="260" x2="132" y2="214" stroke="#0071e3" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+  <text x="252" y="289" font-size="14" fill="#424245">규칙만 바뀌고 저장된 판정이 없으므로, <tspan font-weight="700" fill="#1d1d1f">다음 조회 때 지난 기록도 새 기준으로 다시 판정</tspan></text>
+</svg>

@@ -29,12 +29,8 @@ export default async function ProjectPage({
   params,
 }: PageProps<"/projects/[slug]">) {
   const { slug } = await params;
-  const index = projects.findIndex((p) => p.slug === slug);
-  if (index === -1) notFound();
-
-  const project = projects[index];
-  const prev = projects[index - 1];
-  const next = projects[index + 1];
+  const project = projects.find((p) => p.slug === slug);
+  if (!project) notFound();
 
   return (
     <>
@@ -115,38 +111,6 @@ export default async function ProjectPage({
               <DetailSections sections={project.details} />
             </div>
           </article>
-        )}
-
-        {/* 이전 / 다음 프로젝트 */}
-        {(prev || next) && (
-          <nav className="px-6 py-12">
-            <div className="mx-auto grid w-full max-w-3xl gap-4 border-t border-neutral-100 pt-12 sm:grid-cols-2">
-              {prev ? (
-                <Link
-                  href={`/projects/${prev.slug}`}
-                  className="rounded-2xl bg-[#f5f5f7] p-6 transition-colors hover:bg-[#ebebef]"
-                >
-                  <p className="text-xs font-medium text-neutral-400">
-                    ← 이전 프로젝트
-                  </p>
-                  <p className="mt-1 font-bold">{prev.title}</p>
-                </Link>
-              ) : (
-                <div />
-              )}
-              {next && (
-                <Link
-                  href={`/projects/${next.slug}`}
-                  className="rounded-2xl bg-[#f5f5f7] p-6 text-right transition-colors hover:bg-[#ebebef]"
-                >
-                  <p className="text-xs font-medium text-neutral-400">
-                    다음 프로젝트 →
-                  </p>
-                  <p className="mt-1 font-bold">{next.title}</p>
-                </Link>
-              )}
-            </div>
-          </nav>
         )}
       </main>
     </>

@@ -15,7 +15,6 @@ const itemClass =
 export default function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isBlog = pathname.startsWith("/blog");
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -48,12 +47,6 @@ export default function Nav() {
             </Link>
           ),
         )}
-        <Link
-          href="/blog"
-          className={`${itemClass} ${isBlog ? "bg-black/5 text-black" : "text-neutral-600"}`}
-        >
-          블로그
-        </Link>
       </div>
     </nav>
   );
