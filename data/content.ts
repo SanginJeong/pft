@@ -57,7 +57,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "coworkers",
-    title: "Coworkers HR",
+    title: "Coworkers",
     summary:
       "팀 협업 툴을 근태·휴가 HR 서비스로 확장 (팀 프로젝트 FE 팀장 → 1인 리팩토링)",
     tags: [
@@ -68,11 +68,11 @@ export const projects: Project[] = [
       "Playwright",
       "Sentry",
     ],
-    period: "2025.10 ~ 2025.12 · 2026.10 ~ (HR 전환)",
+    period: "2025.10 ~ 2025.12",
     link: "https://cwr-one.vercel.app",
     repo: "https://github.com/SanginJeong/cwr",
     device: "laptop", // 노트북 목업으로 표시 (가로 캡처)
-    image: "/projects/coworkers.png", // TODO: HR 전환 후 화면(내 근태·구성원 관리)으로 교체
+    image: "/projects/coworkers.png",
     details: [
       {
         label: "개요",
